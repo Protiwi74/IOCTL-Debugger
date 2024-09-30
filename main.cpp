@@ -102,9 +102,6 @@ NTSTATUS DeviceIoControlHandler(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
         LogBufferContents(Irp->UserBuffer, outputBufferLength);
     }
 
-    PVOID paste = Irp->AssociatedIrp.SystemBuffer;
-    WORD* a4 = (WORD*)paste;
-    PIO_STACK_LOCATION irpSp = IoGetCurrentIrpStackLocation(Irp);
     ULONG_PTR information = 0;
 
 
